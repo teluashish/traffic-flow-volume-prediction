@@ -16,6 +16,7 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
 
 1.  **Data cleaning**: Removed duplicates based on the 'date_time' attribute and outliers present in 'temp' and 'rain_1h' attributes using cutoff for outliers as 1.5 times the IQR. Resulted in the removal of 7629 records. Total records remaining = 40575.
 2.  **Feature Engineering and Data augmentation**
+  
     -   Extracted time-related features (year, month, day, hour, weekday, date) from the date_time column.
     -   Binarized holiday, rain, and snow attributes into holiday_bin, rain_bin, and snow_bin.
     -   Created categorical attributes for season, day_of_week, and hour to find patterns within several months, days in a week, and hours of a day.
@@ -24,14 +25,13 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
     -   Applied rolling mean statistic for temp, clouds_all, rain_1h, and snow_1h to smooth out short-term fluctuations or noise and highlight underlying trends or patterns in the traffic.
     -   Created features with mean target encoding for temp_avg, rain_avg, and cloud_avg.
 3.  **EDA (Exploratory Data Analysis) Observations**
+ 
     -   **Rain impact**: rain_bin is not representative of traffic_volume, but rain_1h and its transformed features might be.
     -   **Seasonal trends**: Traffic volume is higher during summer and lower in fall and winter.
     -   **Weekday vs. weekend**: On average, total daily and peak traffic is lower on weekends compared to weekdays.
     -   **Yearly variations**: Less data is available for 2012, and dips in traffic_volume occurred in 2014, 2015, and 2018 are due to changes in road infrastructure.
     -   **Time of day**: Most traffic occurs during morning and evening, with the least traffic volume late at night.
     -   **Feature Selection:** lagged features, rolling mean statistic features, mean target encoded features, cyclical features + features that are excluded based on EDA performed and from lasso regression [ 'temp', 'rain_1h', 'clouds_all', 'traffic_volume', 'year', 'hour', 'date', 'holiday_bin', 'rain_bin', 'day_of_week_cat', 'hour_cat', 'snow_bin', 'snow_1h' ].
-
-# Experimental Setup
 
 ## Machine Learning Models  
 1. **Linear Regression (Worst Model):** plain linear regression with no regularization. 
