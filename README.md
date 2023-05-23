@@ -36,7 +36,11 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
 
 # Experimental Setup
 
-Machine Learning Models:   **Linear Regression (Worst Model):** plain linear regression with no regularization. **Random Forest Regression:** KFold cross-validation with 10 splits is applied to random forest regression, shuffling the data, using a fixed random state of 42 for consistent results, and calculated average performance metrics across all folds. **XGBoost:** It uses an objective of squared error, 1000 estimators, a fixed random state of 42, and parallel computation with n_jobs=-1. Early stopping is applied after 10 rounds to prevent overfitting. KFold cross-validation is employed to evaluate model performance, calculating average performance metrics across all folds for a comprehensive assessment. **Support Vector Machine (SVM):** The SVR model uses a Radial Basis Function (RBF) kernel with a regularization parameter (C) of 1, an epsilon-tube width of 0.1, and a gamma value determined by the 'scale' setting. 
+## Machine Learning Models  
+**Linear Regression (Worst Model):** plain linear regression with no regularization. 
+**Random Forest Regression:** KFold cross-validation with 10 splits is applied to random forest regression, shuffling the data, using a fixed random state of 42 for consistent results, and calculated average performance metrics across all folds. 
+**XGBoost:** It uses an objective of squared error, 1000 estimators, a fixed random state of 42, and parallel computation with n_jobs=-1. Early stopping is applied after 10 rounds to prevent overfitting. KFold cross-validation is employed to evaluate model performance, calculating average performance metrics across all folds for a comprehensive assessment. 
+**Support Vector Machine (SVM):** The SVR model uses a Radial Basis Function (RBF) kernel with a regularization parameter (C) of 1, an epsilon-tube width of 0.1, and a gamma value determined by the 'scale' setting. 
 
 **Model Training**: All neural network models are trained using an Adam optimizer with a learning rate of 0.0001 and decay rate of 1e-5. It compiles the model using MSE as the loss function. The model is fitted with the training data, using 300 epochs, a batch size of 30, and validation data for evaluation. Early stopping and learning rate reduction callbacks are employed to prevent overfitting and improve performance, while preserving the training data order with 'shuffle' set to False.
 
