@@ -1,8 +1,10 @@
 # Traffic Flow Volume Prediction
 
-**Problem:** I approach real-time traffic volume prediction as a multivariate time-series problem, where my model estimates future traffic flow at time steps Tt+1 to Tt+f based on t-hours of historical observations (from Tt-l to Tt), with f being the prediction horizon and l being the length of past observations.
+**Problem Definition** 
+I approach real-time traffic volume prediction as a multivariate time-series problem, where my model estimates future traffic flow at time steps Tt+1 to Tt+f based on t-hours of historical observations (from Tt-l to Tt), with f being the prediction horizon and l being the length of past observations.
 
-**Objective:** To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural Networks (GRU, LSTM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
+**Objective**
+To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural Networks (GRU, LSTM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
 
 # Dataset Information
 
@@ -17,17 +19,11 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
 2.  **Feature Engineering and Data augmentation**
 
     -   Extracted time-related features (year, month, day, hour, weekday, date) from the date_time column.
-
     -   Binarized holiday, rain, and snow attributes into holiday_bin, rain_bin, and snow_bin.
-
     -   Created categorical attributes for season, day_of_week, and hour to find patterns within several months, days in a week, and hours of a day.
-
     -   Generated 1 to 6-hour lagged features for rain, snow, temp, and cloud cover percentage (clouds_all) representing the effect of these environmental factors on traffic volume during the next few hours after occurrence.
-
     -   Encoded cyclical dependencies for hour, day_of_week, and months using sine and cosine transformations. These transformations encode the cyclical nature of the attribute by mapping the values onto a circle. Sin and Cos allows us to capture the periodic nature of time-related variables.
-
     -   Applied rolling mean statistic for temp, clouds_all, rain_1h, and snow_1h to smooth out short-term fluctuations or noise and highlight underlying trends or patterns in the traffic.
-
     -   Created features with mean target encoding for temp_avg, rain_avg, and cloud_avg.
 
 3.  **EDA (Exploratory Data Analysis) Observations**
