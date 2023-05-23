@@ -1,9 +1,9 @@
 # Traffic Flow Volume Prediction
 
-**Problem Definition** 
+**Problem Definition**: 
 I approach real-time traffic volume prediction as a multivariate time-series problem, where my model estimates future traffic flow at time steps Tt+1 to Tt+f based on t-hours of historical observations (from Tt-l to Tt), with f being the prediction horizon and l being the length of past observations.
 
-**Objective**
+**Objective**:
 To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural Networks (GRU, LSTM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
 
 # Dataset Information
@@ -27,7 +27,6 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
     -   Created features with mean target encoding for temp_avg, rain_avg, and cloud_avg.
 
 3.  **EDA (Exploratory Data Analysis) Observations**
-
 4.  **Rain impact**: rain_bin is not representative of traffic_volume, but rain_1h and its transformed features might be.
 5.  **Seasonal trends**: Traffic volume is higher during summer and lower in fall and winter.
 6.  **Weekday vs. weekend**: On average, total daily and peak traffic is lower on weekends compared to weekdays.
@@ -67,30 +66,10 @@ Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) 
 ## Error Analysis
 
 1.  **MAE**: The LSTM-1L model has the lowest Mean Absolute Error (MAE) among all models, indicating that its predictions have the smallest average deviation from the true values. Traditional ML models, such as Linear Regression and SVM, have higher MAE values, suggesting that they are less accurate than the NN models.
-
 2.  **RMSE**: The LSTM-1L model also has the lowest Root Mean Square Error (RMSE), which signifies that it handles larger errors more effectively compared to other models. RMSE values for the ML models are higher, showing that they are not as good at handling large errors as the NN models.
-
 3.  **MAPE**: LSTM-1L has the lowest Mean Absolute Percentage Error (MAPE), implying that it produces the most accurate predictions in terms of percentage errors. The CNN-LSTM model has the highest MAPE, indicating that its predictions are the least accurate in terms of percentage errors. ML models have higher MAPE values than the best performing NN models, reflecting their weaker performance.
-
 4.  **R2 Score**: The R2 scores for LSTM-1L, GRU, and BI-LSTM models are all perfect (1.0), indicating that they can explain 100% of the variance in the data. In contrast, traditional ML models have lower R2 scores, suggesting they cannot explain the data's variance as effectively as the NN models.
 
-## Use Case
-
-The traffic flow volume prediction system developed in this project has the potential to provide several valuable use cases that can significantly improve urban transportation management and planning.
-
-1.  Optimized real-time traffic management: The system can enable dynamic adjustments to traffic signal timings, facilitating smoother traffic flow and reducing congestion across the city.
-2.  Informed infrastructure planning: Transportation authorities can leverage accurate traffic volume predictions to identify the need for additional lanes, alternate routes, or public transit options, accommodating future demands more effectively.
-3.  Enhanced emergency response: By anticipating traffic volume patterns, emergency responders can select the most efficient routes to reach their destinations, minimizing response times and potentially saving lives.
-4.  Empowered traveler information: Providing predicted traffic volume data to drivers and commuters can help them make informed decisions about the best times to travel or choose alternate routes to circumvent congestion.
-5.  Sustainable urban planning: City planners can utilize traffic volume predictions to design more efficient and eco-friendly urban environments, incorporating pedestrian and bike-friendly infrastructure, and promoting public transit usage.
-6.  Improved traffic simulation and modeling: Integrating the prediction system into traffic simulation tools can lead to the development of more accurate and realistic traffic models, fostering advancements in transportation research and development.
-
-# Future Scope
-
-1.  **Enhanced Accuracy:** Continued advancements in deep learning techniques, such as transformer-based models like GPT-3, will likely lead to increased accuracy in forecasting traffic volume.
-2.  **Multimodal Approaches:** Exploring multimodal approaches that combine tabular features with other modalities such as text, audio, or user interactions can lead to more comprehensive and context-aware predictions.
-3.  **Attention Mechanisms:** Exploring advanced attention mechanisms like self-attention or transformer-based attention can improve the prediction by focusing on relevant time periods and features.
-
-# Conclusion
+# Results and Reflection
 
 In conclusion, the single-layer LSTM with a dense layer provided the best performance across all metrics, closely followed by the BI-LSTM model. When compared to traditional ML models, both LSTM and BI-LSTM demonstrated superior performance in traffic flow volume prediction. Although BI-LSTM captures both forward and backward dependencies within time series data, the inclusion of lagged, cyclic, and rolling mean statistics may have supplied sufficient information, rendering the simpler LSTM model adequate for achieving the desired performance. A thorough analysis of the data has proven to be instrumental in this case, enabling to select the most suitable neural network models, which outperformed all the tested ML models.
