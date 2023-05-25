@@ -73,4 +73,10 @@ Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) 
 
 # Results and Reflection
 
+<p align="center">
+  <img src="images/prediction_curves.png" width = "800">
+</p>
+
+<div align = "center"><p>Fig. 1: Prediction Curves</p></div>
+
 In conclusion, the single-layer LSTM with a dense layer provided the best performance across all metrics, closely followed by the BI-LSTM model. When compared to traditional ML models, both LSTM and BI-LSTM demonstrated superior performance in traffic flow volume prediction. Although BI-LSTM captures both forward and backward dependencies within time series data, the inclusion of lagged, cyclic, and rolling mean statistics may have supplied sufficient information, rendering the simpler LSTM model adequate for achieving the desired performance. A thorough analysis of the data has proven to be instrumental in this case, enabling to select the most suitable neural network models, which outperformed all the tested ML models.
