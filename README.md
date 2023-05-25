@@ -43,6 +43,7 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
 
 **Evaluation Metric:** Evaluated the quality of predicted traffic flow using the MAE (Mean Absolute Error), RMSE (Root Mean Square Error), MAPE (Mean Absolute Percentage Error), and R\^2 scores. MAE measures average absolute errors, RMSE emphasizes larger errors, MAPE expresses average errors as percentages, and R2 score indicates the regression model's goodness of fit compared to a baseline. Based on the data gathered and prediction curves, I have chosen MAPE score to be more representative of the Model Accuracy and hence chosen it as a base to evaluate and compare model performance.
 
+
 | **ML Model**                 | **MAE** | **RMSE** | **MAPE** | **R2 Score** |
 |------------------------------|---------|----------|----------|--------------|
 | Linear Regression            | 0.0562  | 0.0736   | 0.2661   | 0.9262       |
@@ -62,6 +63,12 @@ Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#
 
 **Table 2**: Experiment Results from Neural Network Architectures
 
+<p>
+  <img src="images/LSTM_1Layer.png" width = "200">
+</p>
+
+<div><p>Fig. 1: LSTM - 1L (Best Model)</p></div>
+
 Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) are the top-performing ML models, while LSTM-1L (0.0012) and GRU (0.0027) show the best performance among NN models. The CNN-LSTM model has a significantly higher MAPE value (0.17), indicating poorer performance. Overall, the results suggest that XGBoost, Random Forest Regression, LSTM-1L, and GRU models are effective choices for traffic flow volume prediction, with LSTM-1L having the lowest MAPE value, making it the best model among the evaluated options.
 
 ## Error Analysis
@@ -77,6 +84,6 @@ Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) 
   <img src="images/prediction_curves.png" width = "800">
 </p>
 
-<div align = "center"><p>Fig. 1: Prediction Curves</p></div>
+<div align = "center"><p>Fig. 2: Prediction Curves</p></div>
 
 In conclusion, the single-layer LSTM with a dense layer provided the best performance across all metrics, closely followed by the BI-LSTM model. When compared to traditional ML models, both LSTM and BI-LSTM demonstrated superior performance in traffic flow volume prediction. Although BI-LSTM captures both forward and backward dependencies within time series data, the inclusion of lagged, cyclic, and rolling mean statistics may have supplied sufficient information, rendering the simpler LSTM model adequate for achieving the desired performance. A thorough analysis of the data has proven to be instrumental in this case, enabling to select the most suitable neural network models, which outperformed all the tested ML models.
