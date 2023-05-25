@@ -4,15 +4,15 @@
 I approach real-time traffic volume prediction as a multivariate time-series problem, where my model estimates future traffic flow at time steps Tt+1 to Tt+f based on t-hours of historical observations (from Tt-l to Tt), with f being the prediction horizon and l being the length of past observations.
 
 **Objective**:
-To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural Networks (GRU, LSTM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
+To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural NetworkResults and Reflection TM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
 
-# Dataset Information
+## Dataset Information
 
 The Metro Interstate Traffic Volume dataset consists of 48,204 records collected from sensors installed at the MN DoT ATR station 301 on the Hourly Interstate 94 Westbound, located between Minneapolis and St Paul, MN. The dataset includes information on hourly traffic volume, weather conditions, and holidays to analyze their impact on traffic flow. Attributes featured in the dataset are holiday, temperature (in Kelvin), rainfall (mm/hour), snowfall (mm/hour), cloud cover percentage, weather descriptions (short and long), date and time (in local CST), and the hourly traffic volume on I-94 ATR 301 westbound.
 
 Link: [https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume\#](https://archive.ics.uci.edu/ml/datasets/Metro+Interstate+Traffic+Volume)
 
-# Data Analysis
+## Data Analysis
 
 1.  **Data cleaning**: Removed duplicates based on the 'date_time' attribute and outliers present in 'temp' and 'rain_1h' attributes using cutoff for outliers as 1.5 times the IQR. Resulted in the removal of 7629 records. Total records remaining = 40575.
 2.  **Feature Engineering and Data augmentation**
@@ -78,7 +78,7 @@ Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) 
 3.  **MAPE**: LSTM-1L has the lowest Mean Absolute Percentage Error (MAPE), implying that it produces the most accurate predictions in terms of percentage errors. The CNN-LSTM model has the highest MAPE, indicating that its predictions are the least accurate in terms of percentage errors. ML models have higher MAPE values than the best performing NN models, reflecting their weaker performance.
 4.  **R2 Score**: The R2 scores for LSTM-1L, GRU, and BI-LSTM models are all perfect (1.0), indicating that they can explain 100% of the variance in the data. In contrast, traditional ML models have lower R2 scores, suggesting they cannot explain the data's variance as effectively as the NN models.
 
-# Conclusion
+## Results and Reflection 
 
 <p align="center">
   <img src="images/prediction_curves.png" width = "800">
