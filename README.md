@@ -78,7 +78,7 @@ Focusing on MAPE values, XGBoost (0.0748) and Random Forest Regression (0.0763) 
 3.  **MAPE**: LSTM-1L has the lowest Mean Absolute Percentage Error (MAPE), implying that it produces the most accurate predictions in terms of percentage errors. The CNN-LSTM model has the highest MAPE, indicating that its predictions are the least accurate in terms of percentage errors. ML models have higher MAPE values than the best performing NN models, reflecting their weaker performance.
 4.  **R2 Score**: The R2 scores for LSTM-1L, GRU, and BI-LSTM models are all perfect (1.0), indicating that they can explain 100% of the variance in the data. In contrast, traditional ML models have lower R2 scores, suggesting they cannot explain the data's variance as effectively as the NN models.
 
-# Results and Reflection
+# Conclusion
 
 <p align="center">
   <img src="images/prediction_curves.png" width = "800">
