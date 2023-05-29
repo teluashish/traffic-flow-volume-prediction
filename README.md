@@ -4,7 +4,7 @@
 I approach real-time traffic volume prediction as a multivariate time-series problem, where my model estimates future traffic flow at time steps Tt+1 to Tt+f based on t-hours of historical observations (from Tt-l to Tt), with f being the prediction horizon and l being the length of past observations.
 
 **Objective**:
-To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural NetworkResults and Reflection TM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
+To develop an efficient and accurate traffic flow volume prediction system, I will conduct a comprehensive analysis and comparison of Machine Learning models (Linear Regression, SVM, Random Forest Regression, XGBoost) and Neural Network Architectures (GRU, LSTM, BI-LSTM, CNN-LSTM). This project will involve rigorous data preprocessing, feature engineering, hyperparameter tuning, and exploratory data analysis to optimize the performance of ML models. The performance of each model will be assessed using the following metrics: MAE, RMSE, MAPE, and R2 scores.
 
 ## Dataset Information
 
